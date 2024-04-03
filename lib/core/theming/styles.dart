@@ -1,43 +1,83 @@
 import 'package:complete_project/core/theming/colors.dart';
-import 'package:flutter/widgets.dart';
+import 'package:complete_project/core/theming/font_weight_helper.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Styles {
-  static TextStyle font24Black700Weight = TextStyle(
+  static TextStyle font24BlackBold = TextStyle(
     fontSize: 24.sp,
-    color: ColorsManager.black,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.black,
   );
 
   static TextStyle font32BlueBold = TextStyle(
-      fontSize: 32.sp,
-      color: ColorsManager.mainBlue,
-      fontWeight: FontWeight.bold);
+    fontSize: 32.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsManager.mainBlue,
+  );
 
-  static TextStyle font13GreyRegular = TextStyle(
+  static TextStyle font13BlueSemiBold = TextStyle(
     fontSize: 13.sp,
-    color: ColorsManager.grey,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.mainBlue,
+  );
+
+  static TextStyle font13DarkBlueMedium = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.darkBlue,
+  );
+
+  static TextStyle font13DarkBlueRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.darkBlue,
+  );
+
+  static TextStyle font24BlueBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsManager.mainBlue,
   );
 
   static TextStyle font16WhiteSemiBold = TextStyle(
     fontSize: 16.sp,
-    color: ColorsManager.white,
-     fontWeight: FontWeight.w500
-  );
- static TextStyle font24Blue700Weight = TextStyle(
-    fontSize: 24.sp,
-    color: ColorsManager.mainBlue,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeightHelper.semiBold,
+    color: Colors.white,
   );
 
-   static TextStyle font14grey400Weight = TextStyle(
-    fontSize: 14.sp,
+  static TextStyle font13GreyRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.regular,
     color: ColorsManager.grey,
-     fontWeight: FontWeight.w400
   );
- static TextStyle font14grey500Weight = TextStyle(
+
+  static TextStyle font13BlueRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.mainBlue,
+  );
+
+  static TextStyle font14GreyRegular = TextStyle(
     fontSize: 14.sp,
-    color: ColorsManager.grey2,
-     fontWeight: FontWeight.w500
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.grey,
+  );
+
+  static TextStyle font14LightGreyRegular = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.lightGrey,
+  );
+
+  static TextStyle font14DarkBlueMedium = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.darkBlue,
+  );
+  static TextStyle font16WhiteMedium = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: Colors.white,
   );
 }

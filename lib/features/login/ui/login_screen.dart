@@ -40,15 +40,15 @@ class LoginScreen extends StatelessWidget {
                 'Welcome Back',
                 style: Styles.font24BlueBold,
               ),
-              verticalSpace(8.h),
+              verticalSpace(8),
               Text(
                   'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
                   style: Styles.font14LightGreyRegular),
-              verticalSpace(36.h),
+              verticalSpace(36),
               Column(
                 children: [
                   const EmailAndPassword(),
-                  verticalSpace(24.h),
+                  verticalSpace(24),
                   Align(
                     alignment: AlignmentDirectional.centerEnd,
                     child: Text(
@@ -56,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                       style: Styles.font13BlueRegular,
                     ),
                   ),
-                  verticalSpace(40.h),
+                  verticalSpace(40),
                   AppTextButton(
                     buttonText: 'Login',
                     textStyle: Styles.font16WhiteMedium,
@@ -66,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   verticalSpace(16),
                   const TermsAndConditionsText(),
-                  verticalSpace(70),
+                  verticalSpace(55),
                   const AlreadyHaveAccountText(),
                   const LoginBlocListener(),
                 ],

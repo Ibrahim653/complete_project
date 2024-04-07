@@ -1,6 +1,5 @@
 import 'package:complete_project/core/helpers/spacing.dart';
 import 'package:complete_project/core/widgets/app_text_button.dart';
-import 'package:complete_project/features/login/data/models/login_request_body.dart';
 import 'package:complete_project/features/login/logic/cubit/login_cubit.dart';
 import 'package:complete_project/features/login/ui/widgets/email_and_password.dart';
 import 'package:flutter/material.dart';
@@ -17,12 +16,7 @@ class LoginScreen extends StatelessWidget {
 
   void validateThenDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-      context.read<LoginCubit>().emitLoginStates(
-            LoginRequestBody(
-              email: context.read<LoginCubit>().emailController.text,
-              password: context.read<LoginCubit>().passwordController.text,
-            ),
-          );
+      context.read<LoginCubit>().emitLoginStates();
     }
   }
 

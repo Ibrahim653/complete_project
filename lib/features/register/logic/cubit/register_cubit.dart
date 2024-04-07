@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  final RegisterRepo registerRepo;
-  RegisterCubit(this.registerRepo) : super(const RegisterState.initial());
+  final RegisterRepo _registerRepo;
+  RegisterCubit(this._registerRepo) : super(const RegisterState.initial());
 
   TextEditingController passwordController = TextEditingController();
   TextEditingController passwordConfirmationController =
@@ -17,17 +17,24 @@ class RegisterCubit extends Cubit<RegisterState> {
   TextEditingController genderController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
-  void emitRegisterSatate(RegisterRequestBody registerRequestBody) async {
+  void emitRegisterSatate() async {
     emit(const RegisterState.loading());
-    final response = await registerRepo.register(registerRequestBody);
+    final response = await _registerRepo.register(
+      RegisterRequestBody(
+        name: nameController.text,
+        email: emailController.text,
+        password: passwordController.text,
+        phone: phoneController.text,
+        gender: 0,
+        passwordConfimation: passwordConfirmationController.text,
+      ),
+    );
     response.when(
-      success: (registerResponse){
-            emit( RegisterState.success(registerResponse));
-    
+      success: (registerResponse) {
+        emit(RegisterState.success(registerResponse));
       },
-      failure: (error){
-         emit(RegisterState.error(error: error.apiErrorModel.message ?? ''));
-
+      failure: (error) {
+        emit(RegisterState.error(error: error.apiErrorModel.message ?? ''));
       },
     );
   }

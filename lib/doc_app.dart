@@ -4,6 +4,8 @@ import 'package:complete_project/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/helpers/constants.dart';
+
 class DocApp extends StatelessWidget {
   const DocApp({super.key, required this.appRouter});
   final AppRouter appRouter;
@@ -23,7 +25,7 @@ class DocApp extends StatelessWidget {
           primaryColor: ColorsManager.mainBlue,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.homeScreen,
+        initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
       ),
     );
   }

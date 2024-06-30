@@ -20,9 +20,9 @@ class SpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           specializationsLoading: () => setupLoading(),
-          specializationsSuccess: (specializationsResponseModel) {
+          specializationsSuccess: ( specializationDataList) {
             var specializationsList =
-                specializationsResponseModel.specializationDataList;
+              specializationDataList  ;
             return setupSuccess(specializationsList);
           },
           specializationsError: (errorHandler) => setupError(),
